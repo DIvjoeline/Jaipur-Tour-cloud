@@ -1,0 +1,1204 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="Manage your Jaipur trips, saved attractions and reports with Jaipur Tour Cloud.">
+
+    <title>My Dashboard | Jaipur Tour Cloud</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- Shared Project CSS -->
+    <link rel="stylesheet" href="../css/variables.css">
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #D81B60;
+            --primary-dark: #AD1457;
+            --amber: #F59E0B;
+            --purple: #6B21A8;
+            --dark: #1F2937;
+            --text: #4B5563;
+            --muted: #9CA3AF;
+            --background: #FAFAFC;
+            --white: #FFFFFF;
+            --border: #E5E7EB;
+            --soft-pink: #FCE7EF;
+            --cream: #FFF7E6;
+            --shadow: 0 5px 25px rgba(31, 41, 55, 0.05);
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--background);
+            color: var(--dark);
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        button {
+            font-family: inherit;
+        }
+
+        /* Dashboard Layout */
+
+        .dashboard-layout {
+            display: flex;
+            min-height: 100vh;
+        }
+
+        /* Sidebar */
+
+        .sidebar {
+            width: 255px;
+            background: var(--white);
+            border-right: 1px solid var(--border);
+            padding: 28px 18px;
+            display: flex;
+            flex-direction: column;
+            position: fixed;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            z-index: 100;
+            transition: transform 0.3s ease;
+        }
+
+        .sidebar-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 0 10px;
+            margin-bottom: 42px;
+            color: var(--dark);
+            font-size: 19px;
+            font-weight: 800;
+        }
+
+        .sidebar-logo i {
+            color: var(--primary);
+            font-size: 25px;
+        }
+
+        .sidebar-logo strong {
+            color: var(--primary);
+        }
+
+        .sidebar-label {
+            color: var(--muted);
+            font-size: 10px;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            padding: 0 12px;
+            margin-bottom: 13px;
+        }
+
+        .sidebar-nav {
+            display: flex;
+            flex-direction: column;
+            gap: 7px;
+        }
+
+        .sidebar-link {
+            display: flex;
+            align-items: center;
+            gap: 13px;
+            padding: 13px 14px;
+            border-radius: 10px;
+            color: var(--text);
+            font-size: 13px;
+            font-weight: 600;
+            transition: 0.25s ease;
+        }
+
+        .sidebar-link i {
+            width: 19px;
+            text-align: center;
+            font-size: 16px;
+        }
+
+        .sidebar-link:hover,
+        .sidebar-link.active {
+            color: var(--primary);
+            background: var(--soft-pink);
+        }
+
+        .sidebar-bottom {
+            margin-top: auto;
+            border-top: 1px solid var(--border);
+            padding-top: 20px;
+        }
+
+        .sidebar-profile {
+            display: flex;
+            align-items: center;
+            gap: 11px;
+            padding: 10px;
+            margin-bottom: 12px;
+        }
+
+        .profile-avatar {
+            width: 39px;
+            height: 39px;
+            border-radius: 50%;
+            background: var(--soft-pink);
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+        }
+
+        .profile-details h4 {
+            font-size: 12px;
+            margin-bottom: 3px;
+        }
+
+        .profile-details p {
+            color: var(--muted);
+            font-size: 10px;
+        }
+
+        .logout-link {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 14px;
+            color: #DC2626;
+            font-size: 13px;
+            font-weight: 600;
+            border-radius: 9px;
+        }
+
+        .logout-link:hover {
+            background: #FEE2E2;
+        }
+
+        /* Main Content */
+
+        .main-content {
+            flex: 1;
+            margin-left: 255px;
+            padding: 28px 38px 50px;
+            min-width: 0;
+        }
+
+        /* Topbar */
+
+        .topbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            margin-bottom: 35px;
+        }
+
+        .topbar-left {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .menu-button {
+            display: none;
+            border: none;
+            background: var(--white);
+            color: var(--dark);
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        .breadcrumb {
+            color: var(--muted);
+            font-size: 12px;
+        }
+
+        .breadcrumb span {
+            color: var(--primary);
+            font-weight: 700;
+        }
+
+        .topbar-right {
+            display: flex;
+            align-items: center;
+            gap: 17px;
+        }
+
+        .home-link {
+            color: var(--text);
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        .home-link:hover {
+            color: var(--primary);
+        }
+
+        .notification-button {
+            width: 39px;
+            height: 39px;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            background: var(--white);
+            color: var(--text);
+            cursor: pointer;
+        }
+
+        /* Welcome */
+
+        .welcome-section {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .welcome-text .eyebrow {
+            color: var(--primary);
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            margin-bottom: 9px;
+        }
+
+        .welcome-text h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(25px, 3vw, 35px);
+            margin-bottom: 9px;
+        }
+
+        .welcome-text h1 span {
+            color: var(--primary);
+        }
+
+        .welcome-text p {
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+        .explore-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 9px;
+            padding: 13px 20px;
+            background: linear-gradient(135deg, var(--primary), var(--amber));
+            color: var(--white);
+            border-radius: 9px;
+            font-size: 12px;
+            font-weight: 700;
+            transition: 0.25s ease;
+        }
+
+        .explore-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(216, 27, 96, 0.2);
+        }
+
+        /* Welcome Banner */
+
+        .dashboard-banner {
+            background: linear-gradient(115deg, #AD1457, #D81B60, #E87935);
+            border-radius: 17px;
+            padding: 27px 30px;
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            margin-bottom: 30px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .banner-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .banner-content .banner-tag {
+            font-size: 10px;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            opacity: 0.8;
+            margin-bottom: 10px;
+        }
+
+        .banner-content h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 25px;
+            margin-bottom: 8px;
+        }
+
+        .banner-content p {
+            font-size: 12px;
+            opacity: 0.9;
+            max-width: 420px;
+            line-height: 1.7;
+        }
+
+        .banner-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+            background: var(--white);
+            color: var(--primary-dark);
+            padding: 12px 17px;
+            border-radius: 8px;
+            font-size: 11px;
+            font-weight: 800;
+            white-space: nowrap;
+            position: relative;
+            z-index: 1;
+        }
+
+        .banner-decoration {
+            position: absolute;
+            right: 150px;
+            top: -55px;
+            font-size: 180px;
+            opacity: 0.10;
+        }
+
+        /* Statistics */
+
+        .section-heading {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 17px;
+        }
+
+        .section-heading h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 20px;
+        }
+
+        .section-heading p {
+            color: var(--muted);
+            font-size: 11px;
+            margin-top: 5px;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 16px;
+            margin-bottom: 32px;
+        }
+
+        .stat-card {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 13px;
+            padding: 19px;
+            box-shadow: var(--shadow);
+        }
+
+        .stat-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 17px;
+        }
+
+        .stat-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 11px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+        }
+
+        .pink-icon {
+            background: var(--soft-pink);
+            color: var(--primary);
+        }
+
+        .amber-icon {
+            background: var(--cream);
+            color: var(--amber);
+        }
+
+        .purple-icon {
+            background: #F3E8FF;
+            color: var(--purple);
+        }
+
+        .green-icon {
+            background: #DCFCE7;
+            color: #16A34A;
+        }
+
+        .stat-number {
+            font-size: 27px;
+            font-weight: 800;
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            color: var(--muted);
+            font-size: 11px;
+        }
+
+        /* Quick Actions */
+
+        .quick-actions {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 15px;
+            margin-bottom: 33px;
+        }
+
+        .action-card {
+            background: var(--white);
+            border: 1px solid var(--border);
+            padding: 18px;
+            border-radius: 13px;
+            color: var(--dark);
+            transition: 0.25s ease;
+        }
+
+        .action-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--primary);
+            box-shadow: var(--shadow);
+        }
+
+        .action-card i {
+            color: var(--primary);
+            font-size: 21px;
+            margin-bottom: 14px;
+        }
+
+        .action-card h3 {
+            font-size: 12px;
+            margin-bottom: 6px;
+        }
+
+        .action-card p {
+            font-size: 10px;
+            color: var(--muted);
+            line-height: 1.5;
+        }
+
+        /* Bottom Grid */
+
+        .dashboard-bottom-grid {
+            display: grid;
+            grid-template-columns: 1.4fr 1fr;
+            gap: 20px;
+        }
+
+        .dashboard-panel {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 21px;
+            box-shadow: var(--shadow);
+            min-width: 0;
+        }
+
+        .panel-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .panel-header h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 17px;
+        }
+
+        .panel-link {
+            font-size: 11px;
+            color: var(--primary);
+            font-weight: 700;
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 24px 12px;
+        }
+
+        .empty-state-icon {
+            width: 58px;
+            height: 58px;
+            border-radius: 50%;
+            background: var(--soft-pink);
+            color: var(--primary);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto 14px;
+            font-size: 22px;
+        }
+
+        .empty-state h4 {
+            font-size: 13px;
+            margin-bottom: 7px;
+        }
+
+        .empty-state p {
+            color: var(--muted);
+            font-size: 11px;
+            line-height: 1.7;
+            max-width: 260px;
+            margin: 0 auto 15px;
+        }
+
+        .small-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            padding: 9px 13px;
+            background: var(--soft-pink);
+            color: var(--primary);
+            border-radius: 7px;
+            font-size: 10px;
+            font-weight: 800;
+        }
+
+        /* Profile Panel */
+
+        .profile-info {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding-bottom: 19px;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 16px;
+        }
+
+        .large-avatar {
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            background: var(--soft-pink);
+            color: var(--primary);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 22px;
+        }
+
+        .profile-info h4 {
+            font-size: 13px;
+            margin-bottom: 5px;
+        }
+
+        .profile-info p {
+            color: var(--muted);
+            font-size: 11px;
+        }
+
+        .profile-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            padding: 11px 0;
+            border-bottom: 1px solid #F3F4F6;
+            font-size: 11px;
+        }
+
+        .profile-row span:first-child {
+            color: var(--muted);
+        }
+
+        .profile-row span:last-child {
+            font-weight: 700;
+            text-align: right;
+            overflow-wrap: anywhere;
+        }
+
+        .edit-profile {
+            display: block;
+            text-align: center;
+            margin-top: 16px;
+            padding: 11px;
+            border: 1px solid var(--primary);
+            color: var(--primary);
+            border-radius: 8px;
+            font-size: 11px;
+            font-weight: 700;
+            transition: 0.25s ease;
+        }
+
+        .edit-profile:hover {
+            background: var(--primary);
+            color: var(--white);
+        }
+
+        /* Footer */
+
+        .dashboard-footer {
+            text-align: center;
+            color: var(--muted);
+            font-size: 10px;
+            margin-top: 38px;
+        }
+
+        /* Sidebar Overlay */
+
+        .sidebar-overlay {
+            display: none;
+        }
+
+        /* Responsive */
+
+        @media (max-width: 1100px) {
+            .stats-grid,
+            .quick-actions {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .main-content {
+                padding: 25px;
+            }
+        }
+
+        @media (max-width: 800px) {
+            .sidebar {
+                transform: translateX(-100%);
+            }
+
+            .sidebar.open {
+                transform: translateX(0);
+            }
+
+            .sidebar-overlay.show {
+                display: block;
+                position: fixed;
+                inset: 0;
+                background: rgba(0, 0, 0, 0.35);
+                z-index: 90;
+            }
+
+            .main-content {
+                margin-left: 0;
+                padding: 22px 18px 40px;
+            }
+
+            .menu-button {
+                display: block;
+            }
+
+            .dashboard-bottom-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .dashboard-banner {
+                align-items: flex-start;
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 500px) {
+            .welcome-section {
+                align-items: flex-start;
+                flex-direction: column;
+            }
+
+            .stats-grid {
+                gap: 10px;
+            }
+
+            .stat-card {
+                padding: 14px;
+            }
+
+            .stat-number {
+                font-size: 23px;
+            }
+
+            .quick-actions {
+                gap: 10px;
+            }
+
+            .action-card {
+                padding: 14px;
+            }
+
+            .home-link {
+                display: none;
+            }
+
+            .dashboard-banner {
+                padding: 23px 20px;
+            }
+
+            .banner-content h2 {
+                font-size: 22px;
+            }
+
+            .section-heading h2 {
+                font-size: 18px;
+            }
+
+            .dashboard-panel {
+                padding: 17px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="dashboard-layout">
+
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+
+            <a href="../index.html" class="sidebar-logo">
+                <i class="fa-solid fa-landmark"></i>
+                <span>Jaipur Tour <strong>Cloud</strong></span>
+            </a>
+
+            <p class="sidebar-label">MAIN MENU</p>
+
+            <nav class="sidebar-nav">
+
+                <a href="dashboard.html" class="sidebar-link active">
+                    <i class="fa-solid fa-house"></i>
+                    Dashboard
+                </a>
+
+                <a href="explore.html" class="sidebar-link">
+                    <i class="fa-solid fa-compass"></i>
+                    Explore Jaipur
+                </a>
+
+                <a href="my-plan.html" class="sidebar-link">
+                    <i class="fa-solid fa-map-location-dot"></i>
+                    My Travel Plans
+                </a>
+
+                <a href="price-check.html" class="sidebar-link">
+                    <i class="fa-solid fa-tags"></i>
+                    Fair Price Check
+                </a>
+
+                <a href="nearby-essentials.html" class="sidebar-link">
+                    <i class="fa-solid fa-location-dot"></i>
+                    Nearby Essentials
+                </a>
+
+                <a href="businesses.html" class="sidebar-link">
+                    <i class="fa-solid fa-store"></i>
+                    Local Businesses
+                </a>
+
+                <a href="report-problem.html" class="sidebar-link">
+                    <i class="fa-solid fa-flag"></i>
+                    Report a Problem
+                </a>
+
+            </nav>
+
+            <div class="sidebar-bottom">
+
+                <div class="sidebar-profile">
+                    <div class="profile-avatar" id="sidebarAvatar">T</div>
+
+                    <div class="profile-details">
+                        <h4 id="sidebarName">Traveler</h4>
+                        <p>Tourist Account</p>
+                    </div>
+                </div>
+
+                <a href="login.html" class="logout-link" id="logoutButton">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    Logout
+                </a>
+
+            </div>
+
+        </aside>
+
+        <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+        <!-- Main Content -->
+        <main class="main-content">
+
+            <!-- Topbar -->
+            <header class="topbar">
+
+                <div class="topbar-left">
+
+                    <button class="menu-button" id="menuButton"
+                        aria-label="Open navigation">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+
+                    <p class="breadcrumb">
+                        Pages / <span>Dashboard</span>
+                    </p>
+
+                </div>
+
+                <div class="topbar-right">
+
+                    <a href="../index.html" class="home-link">
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        Visit Website
+                    </a>
+
+                    <button class="notification-button"
+                        aria-label="Notifications"
+                        id="notificationButton">
+                        <i class="fa-regular fa-bell"></i>
+                    </button>
+
+                </div>
+
+            </header>
+
+            <!-- Welcome Section -->
+            <section class="welcome-section">
+
+                <div class="welcome-text">
+
+                    <p class="eyebrow">YOUR TRAVEL SPACE</p>
+
+                    <h1>
+                        Welcome back, <span id="welcomeName">Traveler</span>!
+                    </h1>
+
+                    <p>Manage your Jaipur journey from one place.</p>
+
+                </div>
+
+                <a href="explore.html" class="explore-button">
+                    <i class="fa-solid fa-compass"></i>
+                    Explore Jaipur
+                </a>
+
+            </section>
+
+            <!-- Banner -->
+            <section class="dashboard-banner">
+
+                <div class="banner-content">
+
+                    <p class="banner-tag">YOUR NEXT ADVENTURE STARTS HERE</p>
+
+                    <h2>Discover the Magic of Jaipur</h2>
+
+                    <p>
+                        Explore royal palaces, beautiful forts, local markets
+                        and unforgettable experiences in the Pink City.
+                    </p>
+
+                </div>
+
+                <a href="my-plan.html" class="banner-button">
+                    Plan Your Trip
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+                <i class="fa-solid fa-landmark banner-decoration"></i>
+
+            </section>
+
+            <!-- Statistics -->
+            <section>
+
+                <div class="section-heading">
+                    <div>
+                        <h2>Your Overview</h2>
+                        <p>A quick look at your travel activity.</p>
+                    </div>
+                </div>
+
+                <div class="stats-grid">
+
+                    <div class="stat-card">
+
+                        <div class="stat-top">
+                            <div class="stat-icon pink-icon">
+                                <i class="fa-solid fa-map"></i>
+                            </div>
+                        </div>
+
+                        <h3 class="stat-number" id="planCount">0</h3>
+                        <p class="stat-label">Travel Plans</p>
+
+                    </div>
+
+                    <div class="stat-card">
+
+                        <div class="stat-top">
+                            <div class="stat-icon amber-icon">
+                                <i class="fa-solid fa-heart"></i>
+                            </div>
+                        </div>
+
+                        <h3 class="stat-number" id="savedCount">0</h3>
+                        <p class="stat-label">Saved Attractions</p>
+
+                    </div>
+
+                    <div class="stat-card">
+
+                        <div class="stat-top">
+                            <div class="stat-icon purple-icon">
+                                <i class="fa-solid fa-flag"></i>
+                            </div>
+                        </div>
+
+                        <h3 class="stat-number" id="reportCount">0</h3>
+                        <p class="stat-label">Reports Submitted</p>
+
+                    </div>
+
+                    <div class="stat-card">
+
+                        <div class="stat-top">
+                            <div class="stat-icon green-icon">
+                                <i class="fa-solid fa-circle-check"></i>
+                            </div>
+                        </div>
+
+                        <h3 class="stat-number" id="resolvedCount">0</h3>
+                        <p class="stat-label">Resolved Reports</p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- Quick Actions -->
+            <section>
+
+                <div class="section-heading">
+                    <div>
+                        <h2>Quick Access</h2>
+                        <p>Everything you need for your Jaipur trip.</p>
+                    </div>
+                </div>
+
+                <div class="quick-actions">
+
+                    <a href="explore.html" class="action-card">
+                        <i class="fa-solid fa-camera-retro"></i>
+                        <h3>Explore Attractions</h3>
+                        <p>Discover Jaipur's famous destinations.</p>
+                    </a>
+
+                    <a href="my-plan.html" class="action-card">
+                        <i class="fa-solid fa-calendar-days"></i>
+                        <h3>Plan a Trip</h3>
+                        <p>Create your personal travel itinerary.</p>
+                    </a>
+
+                    <a href="price-check.html" class="action-card">
+                        <i class="fa-solid fa-indian-rupee-sign"></i>
+                        <h3>Check Fair Prices</h3>
+                        <p>Check prices before making purchases.</p>
+                    </a>
+
+                    <a href="nearby-essentials.html" class="action-card">
+                        <i class="fa-solid fa-kit-medical"></i>
+                        <h3>Find Essentials</h3>
+                        <p>Find useful nearby facilities.</p>
+                    </a>
+
+                </div>
+
+            </section>
+
+            <!-- Bottom Dashboard -->
+            <section class="dashboard-bottom-grid">
+
+                <!-- Travel Plans -->
+                <div class="dashboard-panel">
+
+                    <div class="panel-header">
+                        <h3>My Travel Plans</h3>
+
+                        <a href="my-plan.html" class="panel-link">
+                            View All
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+
+                    <div class="empty-state">
+
+                        <div class="empty-state-icon">
+                            <i class="fa-solid fa-map-location-dot"></i>
+                        </div>
+
+                        <h4>No Travel Plans Yet</h4>
+
+                        <p>
+                            Your saved itineraries will appear here.
+                            Start planning your Jaipur adventure today.
+                        </p>
+
+                        <a href="my-plan.html" class="small-button">
+                            Create Travel Plan
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+
+                    </div>
+
+                </div>
+
+                <!-- Profile -->
+                <div class="dashboard-panel">
+
+                    <div class="panel-header">
+                        <h3>My Profile</h3>
+                    </div>
+
+                    <div class="profile-info">
+
+                        <div class="large-avatar" id="profileAvatar">
+                            <i class="fa-solid fa-user"></i>
+                        </div>
+
+                        <div>
+                            <h4 id="profileName">Traveler</h4>
+                            <p>Jaipur Tour Cloud Member</p>
+                        </div>
+
+                    </div>
+
+                    <div class="profile-row">
+                        <span>Full Name</span>
+                        <span id="profileFullName">Not available</span>
+                    </div>
+
+                    <div class="profile-row">
+                        <span>Email</span>
+                        <span id="profileEmail">Not available</span>
+                    </div>
+
+                    <div class="profile-row">
+                        <span>Mobile</span>
+                        <span id="profilePhone">Not available</span>
+                    </div>
+
+                    <a href="#" class="edit-profile" id="editProfile">
+                        <i class="fa-solid fa-user-pen"></i>
+                        Edit Profile
+                    </a>
+
+                </div>
+
+            </section>
+
+            <footer class="dashboard-footer">
+                © <span id="currentYear"></span> Jaipur Tour Cloud.
+                Discover Jaipur, travel smarter.
+            </footer>
+
+        </main>
+
+    </div>
+
+    <!-- Dashboard Interactions -->
+    <script>
+        // Mobile Sidebar
+        const sidebar = document.getElementById("sidebar");
+        const menuButton = document.getElementById("menuButton");
+        const sidebarOverlay = document.getElementById("sidebarOverlay");
+
+        function closeSidebar() {
+            sidebar.classList.remove("open");
+            sidebarOverlay.classList.remove("show");
+        }
+
+        menuButton.addEventListener("click", () => {
+            sidebar.classList.toggle("open");
+            sidebarOverlay.classList.toggle("show");
+        });
+
+        sidebarOverlay.addEventListener("click", closeSidebar);
+
+        // Current Year
+        document.getElementById("currentYear").textContent =
+            new Date().getFullYear();
+
+        // User Display
+        // These values will be populated after backend authentication
+        // is connected. Until then, use a safe guest display.
+
+        const user = {
+            name: "Traveler",
+            email: "Not available",
+            phone: "Not available"
+        };
+
+        const displayName = user.name || "Traveler";
+        const firstName = displayName.trim().split(" ")[0] || "Traveler";
+        const initial = displayName.trim().charAt(0).toUpperCase() || "T";
+
+        document.getElementById("welcomeName").textContent = firstName;
+        document.getElementById("sidebarName").textContent = displayName;
+        document.getElementById("sidebarAvatar").textContent = initial;
+        document.getElementById("profileName").textContent = displayName;
+        document.getElementById("profileFullName").textContent = user.name;
+        document.getElementById("profileEmail").textContent = user.email;
+        document.getElementById("profilePhone").textContent = user.phone;
+
+        document.getElementById("profileAvatar").textContent = initial;
+
+        // Notification Placeholder
+        document.getElementById("notificationButton").addEventListener("click", () => {
+            alert("You have no new notifications.");
+        });
+
+        // Profile Placeholder
+        document.getElementById("editProfile").addEventListener("click", (event) => {
+            event.preventDefault();
+            alert("Profile editing will be available after backend integration.");
+        });
+
+        // Logout Placeholder
+        document.getElementById("logoutButton").addEventListener("click", (event) => {
+            event.preventDefault();
+
+            const confirmLogout = confirm("Are you sure you want to logout?");
+
+            if (confirmLogout) {
+                window.location.href = "login.html";
+            }
+        });
+    </script>
+
+</body>
+</html>

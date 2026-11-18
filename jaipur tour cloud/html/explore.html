@@ -1,0 +1,547 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Explore Jaipur | Jaipur Tour Cloud</title>
+
+    <!-- Font Awesome icons -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+          rel="stylesheet">
+
+    <!-- Homepage styles -->
+    <link rel="stylesheet" href="../css/home.css">
+
+    <!-- Explore page styles -->
+    <link rel="stylesheet" href="../css/explore.css">
+</head>
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+
+    <header class="header" id="header">
+
+        <a href="../index.html" class="logo">
+
+            <span class="logo-icon">
+                <i class="fa-solid fa-landmark"></i>
+            </span>
+
+            <span>
+                JAIPUR
+                <small>TOUR CLOUD</small>
+            </span>
+
+        </a>
+
+        <nav class="navbar" id="navbar">
+
+            <a href="../index.html" class="nav-link">Home</a>
+
+            <a href="explore.html" class="nav-link active">Explore</a>
+
+            <a href="myplan.html" class="nav-link">My Plan</a>
+
+            <a href="price-check.html" class="nav-link">Fair Prices</a>
+
+            <a href="essentials.html" class="nav-link">Essentials</a>
+
+            <a href="businesses.html" class="nav-link">Local Businesses</a>
+
+            <a href="../index.html#report" class="mobile-login">
+                Report an Issue
+            </a>
+
+        </nav>
+
+        <div class="nav-actions">
+
+            <a href="../index.html#report" class="login-link">
+                Report Issue
+            </a>
+
+            <a href="login.html" class="nav-button">
+                Sign In
+            </a>
+
+            <button class="menu-toggle"
+                    id="menuToggle"
+                    aria-label="Open navigation menu"
+                    aria-expanded="false">
+
+                <i class="fa-solid fa-bars"></i>
+
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- ================= PAGE HERO ================= -->
+
+    <section class="explore-hero">
+
+        <div class="explore-hero-overlay"></div>
+
+        <div class="explore-hero-content">
+
+            <span class="explore-eyebrow">
+                <i class="fa-solid fa-location-dot"></i>
+                DISCOVER RAJASTHAN'S PINK CITY
+            </span>
+
+            <h1>
+                Explore the
+                <span>Pink City</span>
+            </h1>
+
+            <p>
+                Discover magnificent forts, royal palaces, historic
+                landmarks and unforgettable experiences across Jaipur.
+            </p>
+
+            <div class="explore-breadcrumb">
+                <a href="../index.html">Home</a>
+                <i class="fa-solid fa-chevron-right"></i>
+                <span>Explore Jaipur</span>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= EXPLORE SECTION ================= -->
+
+    <main class="explore-main">
+
+        <section class="explore-section">
+
+            <div class="section-heading">
+
+                <span class="section-tag">FIND YOUR EXPERIENCE</span>
+
+                <h2>
+                    Discover Amazing
+                    <span>Places</span>
+                </h2>
+
+                <p>
+                    From royal architecture to peaceful lakes,
+                    find the places that make Jaipur special.
+                </p>
+
+            </div>
+
+
+            <!-- SEARCH AND SORT -->
+
+            <div class="explore-toolbar">
+
+                <div class="explore-search">
+
+                    <i class="fa-solid fa-magnifying-glass"></i>
+
+                    <input
+                        type="search"
+                        id="attractionSearch"
+                        placeholder="Search attractions..."
+                        aria-label="Search attractions"
+                    >
+
+                    <button id="clearSearch" type="button"
+                            aria-label="Clear search">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+
+                </div>
+
+
+                <div class="explore-sort">
+
+                    <label for="sortAttractions">Sort by:</label>
+
+                    <select id="sortAttractions">
+
+                        <option value="default">Recommended</option>
+                        <option value="az">Name: A to Z</option>
+                        <option value="za">Name: Z to A</option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+
+            <!-- CATEGORY FILTERS -->
+
+            <div class="category-filters">
+
+                <button class="filter-btn active"
+                        data-filter="all">
+                    All Places
+                </button>
+
+                <button class="filter-btn"
+                        data-filter="fort">
+                    <i class="fa-solid fa-chess-rook"></i>
+                    Forts
+                </button>
+
+                <button class="filter-btn"
+                        data-filter="palace">
+                    <i class="fa-solid fa-landmark"></i>
+                    Palaces
+                </button>
+
+                <button class="filter-btn"
+                        data-filter="lake">
+                    <i class="fa-solid fa-water"></i>
+                    Lakes
+                </button>
+
+            </div>
+
+
+            <!-- RESULTS COUNT -->
+
+            <div class="explore-results">
+
+                <p>
+                    Showing
+                    <strong id="resultCount">4</strong>
+                    attractions
+                </p>
+
+            </div>
+
+
+            <!-- ATTRACTION CARDS -->
+
+            <div class="attractions-grid" id="attractionsGrid">
+
+
+                <!-- HAWA MAHAL -->
+
+                <article class="explore-card attraction-card"
+                         data-category="palace"
+                         data-name="Hawa Mahal">
+
+                    <div class="explore-card-image">
+
+                        <img
+                            src="https://commons.wikimedia.org/wiki/Special:FilePath/Hawa_Mahal_2026.jpg?width=900"
+                            alt="Front facade of Hawa Mahal in Jaipur"
+                            loading="lazy"
+                        >
+
+                        <span class="card-category">
+                            Palace
+                        </span>
+
+                        <button class="explore-favorite"
+                                type="button"
+                                aria-label="Add Hawa Mahal to favorites">
+                            <i class="fa-regular fa-heart"></i>
+                        </button>
+
+                    </div>
+
+
+                    <div class="explore-card-content">
+
+                        <div class="card-location">
+                            <i class="fa-solid fa-location-dot"></i>
+                            Badi Choupad, Jaipur
+                        </div>
+
+                        <h3>Hawa Mahal</h3>
+
+                        <p>
+                            Discover the iconic Palace of Winds,
+                            famous for its beautiful pink sandstone
+                            facade and unique windows.
+                        </p>
+
+                        <div class="card-footer">
+
+                            <span>
+                                <i class="fa-regular fa-clock"></i>
+                                Historical Landmark
+                            </span>
+
+                            <a href="attraction-details.html?id=hawa-mahal"
+                               class="details-link">
+                                View Details
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- AMBER FORT -->
+
+                <article class="explore-card attraction-card"
+                         data-category="fort"
+                         data-name="Amber Fort">
+
+                    <div class="explore-card-image">
+
+                        <img
+                            src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Amber_Fort%2C_Le_fort_d%27Amber_%28Rajasthan%29_India_2012.jpg/960px-Amber_Fort%2C_Le_fort_d%27Amber_%28Rajasthan%29_India_2012.jpg"
+                            alt="Amber Fort overlooking Maota Lake"
+                            loading="lazy"
+                        >
+
+                        <span class="card-category">
+                            Fort
+                        </span>
+
+                        <button class="explore-favorite"
+                                type="button"
+                                aria-label="Add Amber Fort to favorites">
+                            <i class="fa-regular fa-heart"></i>
+                        </button>
+
+                    </div>
+
+
+                    <div class="explore-card-content">
+
+                        <div class="card-location">
+                            <i class="fa-solid fa-location-dot"></i>
+                            Amer, Jaipur
+                        </div>
+
+                        <h3>Amber Fort</h3>
+
+                        <p>
+                            Explore the magnificent hilltop fort
+                            known for its grand courtyards,
+                            artistic halls and royal architecture.
+                        </p>
+
+                        <div class="card-footer">
+
+                            <span>
+                                <i class="fa-regular fa-clock"></i>
+                                Historical Landmark
+                            </span>
+
+                            <a href="attraction-details.html?id=amber-fort"
+                               class="details-link">
+                                View Details
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- JAL MAHAL -->
+
+                <article class="explore-card attraction-card"
+                         data-category="lake"
+                         data-name="Jal Mahal">
+
+                    <div class="explore-card-image">
+
+                        <img
+                            src="https://upload.wikimedia.org/wikipedia/commons/6/6d/Jal_Mahal_in_Man_Sagar_Lake.jpg"
+                            alt="Jal Mahal surrounded by Man Sagar Lake"
+                            loading="lazy"
+                        >
+
+                        <span class="card-category">
+                            Lake
+                        </span>
+
+                        <button class="explore-favorite"
+                                type="button"
+                                aria-label="Add Jal Mahal to favorites">
+                            <i class="fa-regular fa-heart"></i>
+                        </button>
+
+                    </div>
+
+
+                    <div class="explore-card-content">
+
+                        <div class="card-location">
+                            <i class="fa-solid fa-location-dot"></i>
+                            Amer Road, Jaipur
+                        </div>
+
+                        <h3>Jal Mahal</h3>
+
+                        <p>
+                            Enjoy the beautiful sight of this
+                            palace standing in the middle of
+                            the peaceful Man Sagar Lake.
+                        </p>
+
+                        <div class="card-footer">
+
+                            <span>
+                                <i class="fa-regular fa-clock"></i>
+                                Scenic Landmark
+                            </span>
+
+                            <a href="attraction-details.html?id=jal-mahal"
+                               class="details-link">
+                                View Details
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- CITY PALACE -->
+
+                <article class="explore-card attraction-card"
+                         data-category="palace"
+                         data-name="City Palace">
+
+                    <div class="explore-card-image">
+
+                        <img
+                            src="https://commons.wikimedia.org/wiki/Special:FilePath/Jaipur%27s_City_Palace.jpg?width=900"
+                            alt="Historic courtyard inside Jaipur City Palace"
+                            loading="lazy"
+                        >
+
+                        <span class="card-category">
+                            Palace
+                        </span>
+
+                        <button class="explore-favorite"
+                                type="button"
+                                aria-label="Add City Palace to favorites">
+                            <i class="fa-regular fa-heart"></i>
+                        </button>
+
+                    </div>
+
+
+                    <div class="explore-card-content">
+
+                        <div class="card-location">
+                            <i class="fa-solid fa-location-dot"></i>
+                            Jaleb Chowk, Jaipur
+                        </div>
+
+                        <h3>City Palace</h3>
+
+                        <p>
+                            Experience Jaipur's royal heritage
+                            through beautiful courtyards,
+                            historic buildings and museum collections.
+                        </p>
+
+                        <div class="card-footer">
+
+                            <span>
+                                <i class="fa-regular fa-clock"></i>
+                                Royal Heritage
+                            </span>
+
+                            <a href="attraction-details.html?id=city-palace"
+                               class="details-link">
+                                View Details
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+            </div>
+
+
+            <!-- NO RESULTS MESSAGE -->
+
+            <div class="no-results" id="noResults" hidden>
+
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+                <h3>No attractions found</h3>
+
+                <p>
+                    Try another search term or select a different category.
+                </p>
+
+            </div>
+
+
+        </section>
+
+    </main>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer class="explore-footer">
+
+        <div class="footer-content">
+
+            <a href="../index.html" class="logo footer-logo">
+
+                <span class="logo-icon">
+                    <i class="fa-solid fa-landmark"></i>
+                </span>
+
+                <span>
+                    JAIPUR
+                    <small>TOUR CLOUD</small>
+                </span>
+
+            </a>
+
+            <p>
+                Discover Jaipur, explore its heritage and plan
+                your journey with confidence.
+            </p>
+
+            <p class="copyright">
+                &copy; <span id="currentYear"></span>
+                Jaipur Tour Cloud. All rights reserved.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <!-- Explore page JavaScript -->
+    <script src="../js/explore.js"></script>
+
+</body>
+
+</html>

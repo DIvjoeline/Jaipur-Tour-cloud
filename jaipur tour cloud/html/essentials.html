@@ -1,0 +1,687 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Nearby Essentials | Jaipur Tour Cloud</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+          rel="stylesheet">
+
+    <!-- Shared CSS -->
+    <link rel="stylesheet" href="../css/home.css">
+
+    <!-- Essentials CSS -->
+    <link rel="stylesheet" href="../css/essentials.css">
+
+</head>
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+
+    <header class="header" id="header">
+
+        <a href="../index.html" class="logo">
+
+            <span class="logo-icon">
+                <i class="fa-solid fa-landmark"></i>
+            </span>
+
+            <span>
+                JAIPUR
+                <small>TOUR CLOUD</small>
+            </span>
+
+        </a>
+
+        <nav class="navbar" id="navbar">
+
+            <a href="../index.html" class="nav-link">Home</a>
+
+            <a href="explore.html" class="nav-link">Explore</a>
+
+            <a href="myplan.html" class="nav-link">My Plan</a>
+
+            <a href="price-check.html" class="nav-link">Fair Prices</a>
+
+            <a href="essentials.html" class="nav-link active">Essentials</a>
+
+            <a href="businesses.html" class="nav-link">Local Businesses</a>
+
+            <a href="../index.html#report" class="mobile-login">
+                Report an Issue
+            </a>
+
+        </nav>
+
+        <div class="nav-actions">
+
+            <a href="../index.html#report" class="login-link">
+                Report Issue
+            </a>
+
+            <a href="login.html" class="nav-button">
+                Sign In
+            </a>
+
+            <button class="menu-toggle"
+                    id="menuToggle"
+                    aria-label="Open navigation menu"
+                    aria-expanded="false">
+
+                <i class="fa-solid fa-bars"></i>
+
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- ================= HERO SECTION ================= -->
+
+    <section class="essentials-hero">
+
+        <div class="essentials-hero-overlay"></div>
+
+        <div class="essentials-hero-content">
+
+            <span class="essentials-eyebrow">
+                <i class="fa-solid fa-location-dot"></i>
+                TRAVEL JAIPUR WITH CONFIDENCE
+            </span>
+
+            <h1>
+                Everything You Need,
+                <span>Nearby.</span>
+            </h1>
+
+            <p>
+                Find essential services around Jaipur and travel
+                with greater comfort, safety and peace of mind.
+            </p>
+
+            <div class="essentials-breadcrumb">
+
+                <a href="../index.html">Home</a>
+
+                <i class="fa-solid fa-chevron-right"></i>
+
+                <span>Nearby Essentials</span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= MAIN SECTION ================= -->
+
+    <main class="essentials-main">
+
+        <section class="essentials-section">
+
+            <!-- SECTION HEADING -->
+
+            <div class="essentials-heading">
+
+                <span class="essentials-section-tag">
+                    TRAVEL SMARTER
+                </span>
+
+                <h2>
+                    Find Essential
+                    <span>Services</span>
+                </h2>
+
+                <p>
+                    From medical assistance to everyday necessities,
+                    find useful services while exploring Jaipur.
+                </p>
+
+            </div>
+
+
+            <!-- LOCATION SEARCH -->
+
+            <div class="essentials-search-wrapper">
+
+                <div class="essentials-search">
+
+                    <i class="fa-solid fa-magnifying-glass"></i>
+
+                    <input
+                        type="search"
+                        id="essentialSearch"
+                        placeholder="Search hospitals, ATMs, pharmacies..."
+                        aria-label="Search essential services"
+                    >
+
+                    <button type="button"
+                            id="clearEssentialSearch"
+                            aria-label="Clear search">
+
+                        <i class="fa-solid fa-xmark"></i>
+
+                    </button>
+
+                </div>
+
+                <button type="button"
+                        class="location-button"
+                        id="locationButton">
+
+                    <i class="fa-solid fa-location-crosshairs"></i>
+
+                    Use My Location
+
+                </button>
+
+            </div>
+
+
+            <!-- SERVICE CATEGORIES -->
+
+            <div class="essential-categories">
+
+                <button class="essential-category active"
+                        data-category="all">
+
+                    <i class="fa-solid fa-border-all"></i>
+
+                    <span>All Services</span>
+
+                </button>
+
+                <button class="essential-category"
+                        data-category="hospital">
+
+                    <i class="fa-solid fa-hospital"></i>
+
+                    <span>Hospitals</span>
+
+                </button>
+
+                <button class="essential-category"
+                        data-category="pharmacy">
+
+                    <i class="fa-solid fa-prescription-bottle-medical"></i>
+
+                    <span>Pharmacies</span>
+
+                </button>
+
+                <button class="essential-category"
+                        data-category="atm">
+
+                    <i class="fa-solid fa-money-bill-wave"></i>
+
+                    <span>ATMs</span>
+
+                </button>
+
+                <button class="essential-category"
+                        data-category="police">
+
+                    <i class="fa-solid fa-shield-halved"></i>
+
+                    <span>Police</span>
+
+                </button>
+
+                <button class="essential-category"
+                        data-category="fuel">
+
+                    <i class="fa-solid fa-gas-pump"></i>
+
+                    <span>Petrol Pumps</span>
+
+                </button>
+
+                <button class="essential-category"
+                        data-category="toilet">
+
+                    <i class="fa-solid fa-restroom"></i>
+
+                    <span>Public Toilets</span>
+
+                </button>
+
+            </div>
+
+
+            <!-- RESULTS HEADING -->
+
+            <div class="essentials-results-heading">
+
+                <div>
+
+                    <h3>Nearby Services</h3>
+
+                    <p id="essentialResultCount">
+                        Browse essential service categories
+                    </p>
+
+                </div>
+
+                <div class="essentials-sort">
+
+                    <label for="essentialSort">Sort:</label>
+
+                    <select id="essentialSort">
+
+                        <option value="default">Recommended</option>
+
+                        <option value="name">Name: A to Z</option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+
+            <!-- SERVICE CARDS -->
+
+            <div class="essentials-grid" id="essentialsGrid">
+
+                <!-- Sample card: Hospital -->
+
+                <article class="essential-card"
+                         data-category="hospital"
+                         data-name="Hospital sample">
+
+                    <div class="essential-card-icon hospital-icon">
+
+                        <i class="fa-solid fa-hospital"></i>
+
+                    </div>
+
+                    <div class="essential-card-content">
+
+                        <span class="essential-type">
+                            HOSPITAL
+                        </span>
+
+                        <h3>Hospital listings</h3>
+
+                        <p>
+                            Find medical facilities and hospitals
+                            around your location.
+                        </p>
+
+                        <span class="essential-status">
+                            <i class="fa-solid fa-circle-info"></i>
+                            Live listings coming soon
+                        </span>
+
+                    </div>
+
+                    <div class="essential-card-action">
+
+                        <button type="button" class="essential-map-button"
+                                disabled>
+
+                            <i class="fa-solid fa-map-location-dot"></i>
+
+                            View on Map
+
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <!-- Sample card: Pharmacy -->
+
+                <article class="essential-card"
+                         data-category="pharmacy"
+                         data-name="Pharmacy sample">
+
+                    <div class="essential-card-icon pharmacy-icon">
+
+                        <i class="fa-solid fa-prescription-bottle-medical"></i>
+
+                    </div>
+
+                    <div class="essential-card-content">
+
+                        <span class="essential-type">
+                            PHARMACY
+                        </span>
+
+                        <h3>Pharmacy listings</h3>
+
+                        <p>
+                            Find pharmacies and medicine shops
+                            around Jaipur.
+                        </p>
+
+                        <span class="essential-status">
+                            <i class="fa-solid fa-circle-info"></i>
+                            Live listings coming soon
+                        </span>
+
+                    </div>
+
+                    <div class="essential-card-action">
+
+                        <button type="button" class="essential-map-button"
+                                disabled>
+
+                            <i class="fa-solid fa-map-location-dot"></i>
+
+                            View on Map
+
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <!-- Sample card: ATM -->
+
+                <article class="essential-card"
+                         data-category="atm"
+                         data-name="ATM sample">
+
+                    <div class="essential-card-icon atm-icon">
+
+                        <i class="fa-solid fa-money-bill-wave"></i>
+
+                    </div>
+
+                    <div class="essential-card-content">
+
+                        <span class="essential-type">
+                            ATM
+                        </span>
+
+                        <h3>ATM listings</h3>
+
+                        <p>
+                            Locate nearby ATMs and banking facilities
+                            while travelling.
+                        </p>
+
+                        <span class="essential-status">
+                            <i class="fa-solid fa-circle-info"></i>
+                            Live listings coming soon
+                        </span>
+
+                    </div>
+
+                    <div class="essential-card-action">
+
+                        <button type="button" class="essential-map-button"
+                                disabled>
+
+                            <i class="fa-solid fa-map-location-dot"></i>
+
+                            View on Map
+
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <!-- Sample card: Police -->
+
+                <article class="essential-card"
+                         data-category="police"
+                         data-name="Police sample">
+
+                    <div class="essential-card-icon police-icon">
+
+                        <i class="fa-solid fa-shield-halved"></i>
+
+                    </div>
+
+                    <div class="essential-card-content">
+
+                        <span class="essential-type">
+                            POLICE
+                        </span>
+
+                        <h3>Police stations</h3>
+
+                        <p>
+                            Find police stations and nearby
+                            assistance facilities.
+                        </p>
+
+                        <span class="essential-status">
+                            <i class="fa-solid fa-circle-info"></i>
+                            Live listings coming soon
+                        </span>
+
+                    </div>
+
+                    <div class="essential-card-action">
+
+                        <button type="button" class="essential-map-button"
+                                disabled>
+
+                            <i class="fa-solid fa-map-location-dot"></i>
+
+                            View on Map
+
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <!-- Sample card: Fuel -->
+
+                <article class="essential-card"
+                         data-category="fuel"
+                         data-name="Fuel sample">
+
+                    <div class="essential-card-icon fuel-icon">
+
+                        <i class="fa-solid fa-gas-pump"></i>
+
+                    </div>
+
+                    <div class="essential-card-content">
+
+                        <span class="essential-type">
+                            FUEL STATION
+                        </span>
+
+                        <h3>Petrol pumps</h3>
+
+                        <p>
+                            Find fuel stations when travelling
+                            around the city.
+                        </p>
+
+                        <span class="essential-status">
+                            <i class="fa-solid fa-circle-info"></i>
+                            Live listings coming soon
+                        </span>
+
+                    </div>
+
+                    <div class="essential-card-action">
+
+                        <button type="button" class="essential-map-button"
+                                disabled>
+
+                            <i class="fa-solid fa-map-location-dot"></i>
+
+                            View on Map
+
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <!-- Sample card: Public Toilet -->
+
+                <article class="essential-card"
+                         data-category="toilet"
+                         data-name="Public toilet sample">
+
+                    <div class="essential-card-icon toilet-icon">
+
+                        <i class="fa-solid fa-restroom"></i>
+
+                    </div>
+
+                    <div class="essential-card-content">
+
+                        <span class="essential-type">
+                            PUBLIC FACILITY
+                        </span>
+
+                        <h3>Public toilets</h3>
+
+                        <p>
+                            Find public restroom facilities
+                            around Jaipur.
+                        </p>
+
+                        <span class="essential-status">
+                            <i class="fa-solid fa-circle-info"></i>
+                            Live listings coming soon
+                        </span>
+
+                    </div>
+
+                    <div class="essential-card-action">
+
+                        <button type="button" class="essential-map-button"
+                                disabled>
+
+                            <i class="fa-solid fa-map-location-dot"></i>
+
+                            View on Map
+
+                        </button>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+
+            <!-- NO RESULTS -->
+
+            <div class="essential-no-results" id="essentialNoResults" hidden>
+
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+                <h3>No services found</h3>
+
+                <p>
+                    Try another search or select a different category.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= EMERGENCY INFORMATION ================= -->
+
+        <section class="emergency-section">
+
+            <div class="emergency-content">
+
+                <div class="emergency-icon">
+
+                    <i class="fa-solid fa-triangle-exclamation"></i>
+
+                </div>
+
+                <div class="emergency-text">
+
+                    <span>IMPORTANT INFORMATION</span>
+
+                    <h2>Need Emergency Assistance?</h2>
+
+                    <p>
+                        India's emergency response number is 112.
+                        Use it for urgent police, fire or medical assistance.
+                    </p>
+
+                </div>
+
+                <a href="tel:112" class="emergency-button">
+
+                    <i class="fa-solid fa-phone"></i>
+
+                    Call 112
+
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer class="essentials-footer">
+
+        <div class="footer-content">
+
+            <a href="../index.html" class="logo footer-logo">
+
+                <span class="logo-icon">
+                    <i class="fa-solid fa-landmark"></i>
+                </span>
+
+                <span>
+                    JAIPUR
+                    <small>TOUR CLOUD</small>
+                </span>
+
+            </a>
+
+            <p>
+                Discover Jaipur, explore its heritage and plan
+                your journey with confidence.
+            </p>
+
+            <p class="copyright">
+                &copy; <span id="currentYear"></span>
+                Jaipur Tour Cloud. All rights reserved.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <!-- Essentials JavaScript -->
+    <script src="../js/essentials.js"></script>
+
+</body>
+
+</html>

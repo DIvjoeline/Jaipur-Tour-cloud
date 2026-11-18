@@ -1,0 +1,185 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sign In | Jaipur Tour Cloud</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../css/home.css">
+    <link rel="stylesheet" href="../css/login.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="header" id="header">
+        <a href="../index.html" class="logo">
+            <span class="logo-icon">
+                <i class="fa-solid fa-landmark"></i>
+            </span>
+            <span>Jaipur Tour <strong>Cloud</strong></span>
+        </a>
+
+        <button class="menu-toggle" id="menuToggle"
+            aria-label="Toggle navigation" aria-expanded="false">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <!-- <nav class="navbar" id="navbar">
+            <a href="../index.html" class="nav-link">Home</a>
+            <a href="explore.html" class="nav-link">Explore</a>
+            <a href="myplan.html" class="nav-link">My Plan</a>
+            <a href="price-check.html" class="nav-link">Fair Prices</a>
+            <a href="essentials.html" class="nav-link">Essentials</a>
+            <a href="businesses.html" class="nav-link">Local Businesses</a>
+            <a href="../index.html#report" class="mobile-login">Report an Issue</a>
+        </nav>
+
+        <a href="login.html" class="header-login active-login">
+            Sign In
+        </a> -->
+    </header>
+
+    <!-- Login Section -->
+    <main class="login-page">
+
+        <!-- Left Visual Panel -->
+        <section class="login-visual">
+            <div class="visual-overlay"></div>
+
+            <div class="visual-content">
+                <a href="../index.html" class="visual-brand">
+                    <i class="fa-solid fa-landmark"></i>
+                    Jaipur Tour Cloud
+                </a>
+
+                <span class="visual-eyebrow">YOUR JOURNEY BEGINS HERE</span>
+
+                <h1>Discover Jaipur.<br>Experience Royalty.</h1>
+
+                <p>
+                    Sign in to organize your journey, save your favourite
+                    places and explore the Pink City with confidence.
+                </p>
+
+                <div class="visual-bottom">
+                    <span><i class="fa-solid fa-location-dot"></i> Jaipur, Rajasthan, India</span>
+                    <span><i class="fa-solid fa-heart"></i> Made for curious travellers</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Form Panel -->
+        <section class="login-form-section">
+            <div class="login-form-wrapper">
+
+                <a href="../index.html" class="back-home">
+                    <i class="fa-solid fa-arrow-left"></i>
+                    Back to Home
+                </a>
+
+                <div class="login-heading">
+                    <span class="form-eyebrow">WELCOME BACK</span>
+                    <h2>Sign in to your account</h2>
+                    <p>Continue planning your Jaipur experience.</p>
+                </div>
+
+                <form id="loginForm" novalidate>
+
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+
+                        <div class="input-wrapper">
+                            <i class="fa-regular fa-envelope input-icon"></i>
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                placeholder="Enter your email address"
+                                autocomplete="email"
+                                required>
+                        </div>
+
+                        <small class="field-error" id="emailError"></small>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="password-label-row">
+                            <label for="password">Password</label>
+                            <a href="#" id="forgotPassword">Forgot password?</a>
+                        </div>
+
+                        <div class="input-wrapper">
+                            <i class="fa-solid fa-lock input-icon"></i>
+
+                            <input
+                                type="password"
+                                id="password"
+                                name="password"
+                                placeholder="Enter your password"
+                                autocomplete="current-password"
+                                required>
+
+                            <button type="button" class="toggle-password"
+                                id="togglePassword" aria-label="Show password">
+                                <i class="fa-regular fa-eye"></i>
+                            </button>
+                        </div>
+
+                        <small class="field-error" id="passwordError"></small>
+                    </div>
+
+                    <div class="form-options">
+                        <label class="remember-option">
+                            <input type="checkbox" id="rememberMe">
+                            <span>Remember me</span>
+                        </label>
+                    </div>
+
+                    <div class="login-message" id="loginMessage"
+                        role="status" aria-live="polite"></div>
+
+                    <button type="submit" class="sign-in-button" id="signInButton">
+                        <span>Sign In</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+
+                </form>
+
+                <div class="register-prompt">
+                    <p>Don't have an account?
+                        <a href="register.html">Create an account</a>
+                    </p>
+                </div>
+
+                <div class="login-divider">
+                    <span>EXPLORE WITHOUT AN ACCOUNT</span>
+                </div>
+
+                <a href="explore.html" class="guest-button">
+                    Continue as Guest
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+                <p class="login-note">
+                    By continuing, you agree to use Jaipur Tour Cloud
+                    responsibly and respectfully.
+                </p>
+
+            </div>
+        </section>
+
+    </main>
+
+    <script src="../js/login.js"></script>
+</body>
+</html>
