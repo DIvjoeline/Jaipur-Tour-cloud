@@ -1,0 +1,405 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Fair Price Check | Jaipur Tour Cloud</title>
+
+    <!-- Shared CSS -->
+   <!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<!-- Main Website CSS -->
+<link rel="stylesheet" href="../css/home.css">
+
+<!-- Fair Price Page CSS -->
+<link rel="stylesheet" href="../css/price-check.css">
+</head>
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+
+    <header class="header" id="header">
+
+        <a href="../index.html" class="logo">
+            <span class="logo-icon">
+                <i class="fa-solid fa-landmark"></i>
+            </span>
+
+            <span>
+                JAIPUR
+                <small>TOUR CLOUD</small>
+            </span>
+        </a>
+
+        
+
+<nav class="navbar" id="navbar">
+
+    <a href="../index.html" class="nav-link">Home</a>
+
+    <a href="explore.html" class="nav-link">Explore</a>
+
+    <a href="myplan.html" class="nav-link">My Plan</a>
+
+    <a href="price-check.html" class="nav-link">Fair Prices</a>
+
+    <a href="essentials.html" class="nav-link">Essentials</a>
+
+    <a href="businesses.html" class="nav-link">Local Businesses</a>
+
+    <a href="../index.html#report" class="mobile-login">
+        Report an Issue
+    </a>
+
+</nav>
+
+
+
+        <div class="nav-actions">
+            <a href="../index.html#report" class="login-link">Report Issue</a>
+            <a href="login.html" class="nav-button">Sign In</a>
+
+            <button class="menu-toggle" id="menuToggle"
+                    aria-label="Open navigation menu"
+                    aria-expanded="false">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+    </header>
+
+
+    <!-- ================= HERO SECTION ================= -->
+
+    <section class="price-hero">
+
+        <div class="price-hero-overlay"></div>
+
+        <div class="price-hero-content">
+
+            <span class="price-eyebrow">
+                <i class="fa-solid fa-shield-halved"></i>
+                TRAVEL SMART. PAY FAIR.
+            </span>
+
+            <h1>
+                Know the Price.
+                <span>Pay What's Fair.</span>
+            </h1>
+
+            <p>
+                Check reference prices for popular tourist services
+                and products in Jaipur before you spend.
+            </p>
+
+            <div class="price-breadcrumb">
+                <a href="../index.html">Home</a>
+                <i class="fa-solid fa-chevron-right"></i>
+                <span>Fair Price Check</span>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= INTRODUCTION ================= -->
+
+    <section class="price-intro">
+
+        <div class="price-intro-icon">
+            <i class="fa-solid fa-scale-balanced"></i>
+        </div>
+
+        <div class="price-intro-text">
+            <h2>Make informed spending decisions</h2>
+            <p>
+                Jaipur has wonderful local markets, transport services
+                and tourist experiences. Use our reference-price tool
+                to understand typical prices and make better decisions.
+            </p>
+        </div>
+
+    </section>
+
+
+    <!-- ================= PRICE CHECKER ================= -->
+
+    <main class="price-main">
+
+        <section class="price-checker-section">
+
+            <div class="section-heading">
+                <span class="section-eyebrow">PRICE TRANSPARENCY</span>
+                <h2>Check a Fair Price</h2>
+                <p>
+                    Select a category and search for the product or
+                    service you want to compare.
+                </p>
+            </div>
+
+
+            <!-- Search Form -->
+
+            <div class="price-search-box">
+
+                <div class="price-form-group">
+                    <label for="priceCategory">
+                        Select Category
+                    </label>
+
+                    <select id="priceCategory">
+                        <option value="">Choose a category</option>
+                        <option value="transport">Local Transport</option>
+                        <option value="shopping">Shopping & Handicrafts</option>
+                        <option value="food">Food & Beverages</option>
+                        <option value="guide">Tourist Guides</option>
+                        <option value="services">Tourist Services</option>
+                    </select>
+                </div>
+
+
+                <div class="price-form-group">
+                    <label for="priceSearch">
+                        Product or Service
+                    </label>
+
+                    <div class="price-input-wrapper">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+
+                        <input
+                            type="text"
+                            id="priceSearch"
+                            placeholder="Example: Auto rickshaw, handicraft..."
+                        >
+                    </div>
+                </div>
+
+
+                <button type="button" class="price-search-btn" id="checkPriceBtn">
+                    Check Price
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+
+            </div>
+
+
+            <!-- Search Suggestions -->
+
+            <div class="price-suggestions" id="priceSuggestions">
+                <span>Popular searches:</span>
+
+                <button type="button" class="suggestion-btn"
+                        data-category="transport" data-search="auto rickshaw">
+                    Auto Rickshaw
+                </button>
+
+                <button type="button" class="suggestion-btn"
+                        data-category="shopping" data-search="blue pottery">
+                    Blue Pottery
+                </button>
+
+                <button type="button" class="suggestion-btn"
+                        data-category="shopping" data-search="jaipur textiles">
+                    Jaipur Textiles
+                </button>
+
+                <button type="button" class="suggestion-btn"
+                        data-category="guide" data-search="tourist guide">
+                    Tourist Guide
+                </button>
+            </div>
+
+        </section>
+
+
+        <!-- ================= PRICE RESULT ================= -->
+
+        <section class="price-result-section" id="priceResultSection">
+
+            <div class="price-result-header">
+                <div>
+                    <span class="section-eyebrow">PRICE COMPARISON</span>
+                    <h2>Price Check Result</h2>
+                </div>
+
+                <span class="result-status" id="resultStatus">
+                    <i class="fa-solid fa-circle-info"></i>
+                    Awaiting Search
+                </span>
+            </div>
+
+
+            <div class="price-result-card" id="priceResult">
+
+                <div class="price-empty-state" id="priceEmptyState">
+
+                    <div class="empty-price-icon">
+                        <i class="fa-solid fa-magnifying-glass-dollar"></i>
+                    </div>
+
+                    <h3>Your price comparison will appear here</h3>
+
+                    <p>
+                        Search for a product or service above to see
+                        its available reference-price information.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= HOW IT WORKS ================= -->
+
+        <section class="how-price-works">
+
+            <div class="section-heading">
+                <span class="section-eyebrow">SIMPLE AND TRANSPARENT</span>
+                <h2>How It Works</h2>
+                <p>
+                    Three simple steps to make smarter spending decisions.
+                </p>
+            </div>
+
+
+            <div class="price-steps-grid">
+
+                <div class="price-step-card">
+
+                    <div class="step-number">01</div>
+
+                    <div class="step-icon">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+
+                    <h3>Search</h3>
+
+                    <p>
+                        Find the product or service you want to check.
+                    </p>
+
+                </div>
+
+
+                <div class="price-step-card">
+
+                    <div class="step-number">02</div>
+
+                    <div class="step-icon">
+                        <i class="fa-solid fa-chart-column"></i>
+                    </div>
+
+                    <h3>Compare</h3>
+
+                    <p>
+                        Review the available reference-price information.
+                    </p>
+
+                </div>
+
+
+                <div class="price-step-card">
+
+                    <div class="step-number">03</div>
+
+                    <div class="step-icon">
+                        <i class="fa-solid fa-wallet"></i>
+                    </div>
+
+                    <h3>Decide</h3>
+
+                    <p>
+                        Make an informed decision before purchasing.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= REPORT PRICE ================= -->
+
+        <section class="price-report-section">
+
+            <div class="price-report-content">
+
+                <div class="report-icon">
+                    <i class="fa-solid fa-bullhorn"></i>
+                </div>
+
+                <div>
+                    <span class="section-eyebrow">HELP THE COMMUNITY</span>
+
+                    <h2>Found an unusual price?</h2>
+
+                    <p>
+                        Help other travellers by reporting a price
+                        concern or sharing useful price information.
+                    </p>
+                </div>
+
+                <a href="report-problem.html" class="price-report-btn">
+                    Report an Issue
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer class="explore-footer">
+
+        <div class="footer-content">
+
+            <a href="../index.html" class="logo footer-logo">
+                <span class="logo-icon">
+                    <i class="fa-solid fa-landmark"></i>
+                </span>
+
+                <span>
+                    JAIPUR
+                    <small>TOUR CLOUD</small>
+                </span>
+            </a>
+
+            <p>
+                Discover Jaipur. Travel smarter. Experience more.
+            </p>
+
+            <div class="footer-bottom">
+                <p>
+                    &copy; <span id="currentYear"></span>
+                    Jaipur Tour Cloud. All rights reserved.
+                </p>
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <!-- JavaScript -->
+    <script src="../js/price-check.js"></script>
+
+</body>
+</html>

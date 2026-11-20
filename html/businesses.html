@@ -1,0 +1,579 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Local Businesses | Jaipur Tour Cloud</title>
+    <meta name="description" content="Discover Jaipur's local shops, artisans, food, stays and experiences with Jaipur Tour Cloud.">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Shared and page CSS -->
+    <link rel="stylesheet" href="../css/home.css">
+    <link rel="stylesheet" href="../css/businesses.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="header" id="header">
+
+        <a href="../index.html" class="logo">
+            <span class="logo-icon">
+                <i class="fa-solid fa-landmark"></i>
+            </span>
+            <span>
+                JAIPUR
+                <small>TOUR CLOUD</small>
+            </span>
+        </a>
+
+        <nav class="navbar" id="navbar">
+            <a href="../index.html" class="nav-link">Home</a>
+            <a href="explore.html" class="nav-link">Explore</a>
+            <a href="myplan.html" class="nav-link">My Plan</a>
+            <a href="price-check.html" class="nav-link">Fair Prices</a>
+            <a href="essentials.html" class="nav-link">Essentials</a>
+            <a href="businesses.html" class="nav-link active">Local Businesses</a>
+
+            <a href="../index.html#report" class="mobile-login">
+                Report an Issue
+            </a>
+        </nav>
+
+        <div class="nav-actions">
+            <a href="../index.html#report" class="login-link">
+                Report Issue
+            </a>
+
+            <a href="login.html" class="nav-button">
+                Sign In
+            </a>
+
+            <button class="menu-toggle"
+                id="menuToggle"
+                aria-label="Open navigation menu"
+                aria-expanded="false">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+    </header>
+
+
+    <!-- HERO SECTION -->
+    <section class="business-hero">
+
+        <div class="business-hero-overlay"></div>
+
+        <div class="business-hero-content">
+
+            <span class="business-eyebrow">
+                <i class="fa-solid fa-store"></i>
+                SUPPORT LOCAL JAIPUR
+            </span>
+
+            <h1>
+                Discover the
+                <span>Local Side</span>
+                of Jaipur.
+            </h1>
+
+            <p>
+                Explore local shops, traditional artisans, food,
+                stays and experiences. Discover the people and
+                businesses that make Jaipur special.
+            </p>
+
+            <div class="business-breadcrumb">
+                <a href="../index.html">Home</a>
+                <i class="fa-solid fa-chevron-right"></i>
+                <span>Local Businesses</span>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- MAIN CONTENT -->
+    <main class="business-main">
+
+        <section class="business-section">
+
+            <!-- SECTION HEADING -->
+            <div class="business-heading">
+
+                <span class="business-section-tag">
+                    EXPLORE LOCAL JAIPUR
+                </span>
+
+                <h2>
+                    Find Something
+                    <span>Local.</span>
+                </h2>
+
+                <p>
+                    From handmade Rajasthani crafts to local food
+                    and unique experiences, discover what Jaipur
+                    has to offer.
+                </p>
+
+            </div>
+
+
+            <!-- SEARCH -->
+            <div class="business-search-wrapper">
+
+                <div class="business-search">
+
+                    <i class="fa-solid fa-magnifying-glass"></i>
+
+                    <input
+                        type="search"
+                        id="businessSearch"
+                        placeholder="Search shops, food, artisans, stays..."
+                        aria-label="Search local business categories">
+
+                    <button
+                        type="button"
+                        id="clearBusinessSearch"
+                        aria-label="Clear search">
+
+                        <i class="fa-solid fa-xmark"></i>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- CATEGORY FILTERS -->
+            <div class="business-categories">
+
+                <button class="business-filter active"
+                    data-category="all">
+                    <i class="fa-solid fa-border-all"></i>
+                    All Categories
+                </button>
+
+                <button class="business-filter"
+                    data-category="crafts">
+                    <i class="fa-solid fa-palette"></i>
+                    Handicrafts
+                </button>
+
+                <button class="business-filter"
+                    data-category="food">
+                    <i class="fa-solid fa-utensils"></i>
+                    Food & Cafes
+                </button>
+
+                <button class="business-filter"
+                    data-category="shopping">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    Shopping
+                </button>
+
+                <button class="business-filter"
+                    data-category="stays">
+                    <i class="fa-solid fa-hotel"></i>
+                    Stays
+                </button>
+
+                <button class="business-filter"
+                    data-category="experiences">
+                    <i class="fa-solid fa-camera"></i>
+                    Experiences
+                </button>
+
+                <button class="business-filter"
+                    data-category="transport">
+                    <i class="fa-solid fa-car"></i>
+                    Transport
+                </button>
+
+            </div>
+
+
+            <!-- RESULTS HEADER -->
+            <div class="business-results-heading">
+
+                <div>
+                    <h3>Explore Business Categories</h3>
+
+                    <p id="businessResultCount" aria-live="polite">
+                        Browse local business categories
+                    </p>
+                </div>
+
+                <div class="business-sort">
+
+                    <label for="businessSort">Sort:</label>
+
+                    <select id="businessSort">
+                        <option value="default">Recommended</option>
+                        <option value="name">Name: A to Z</option>
+                    </select>
+
+                </div>
+
+            </div>
+
+
+            <!-- BUSINESS CATEGORY CARDS -->
+            <div class="business-grid" id="businessGrid">
+
+                <!-- HANDICRAFTS -->
+                <article class="business-card"
+                    data-category="crafts"
+                    data-name="Handicrafts and Artisans"
+                    data-keywords="handmade pottery blue pottery jewellery textiles block printing crafts artists">
+
+                    <div class="business-card-image crafts-image">
+                        <i class="fa-solid fa-palette"></i>
+                        <span class="business-image-label">ART & CULTURE</span>
+                    </div>
+
+                    <div class="business-card-content">
+
+                        <span class="business-type">HANDICRAFTS</span>
+
+                        <h3>Handicrafts & Artisans</h3>
+
+                        <p>
+                            Explore traditional crafts, handmade
+                            products, pottery, jewellery and local art.
+                        </p>
+
+                        <div class="business-card-footer">
+                            <span>
+                                <i class="fa-solid fa-heart"></i>
+                                Support local creators
+                            </span>
+                        </div>
+
+                        <div class="business-card-action">
+                            <button type="button"
+                                class="business-explore-button"
+                                data-filter="crafts">
+                                Explore Category
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </button>
+                        </div>
+
+                    </div>
+                </article>
+
+
+                <!-- FOOD -->
+                <article class="business-card"
+                    data-category="food"
+                    data-name="Food and Cafes"
+                    data-keywords="restaurants cafes street food sweets local cuisine rajasthani food">
+
+                    <div class="business-card-image food-image">
+                        <i class="fa-solid fa-utensils"></i>
+                        <span class="business-image-label">LOCAL FLAVOURS</span>
+                    </div>
+
+                    <div class="business-card-content">
+
+                        <span class="business-type">FOOD & CAFES</span>
+
+                        <h3>Food & Cafes</h3>
+
+                        <p>
+                            Discover local restaurants, cafes,
+                            traditional food and Jaipur's street-food culture.
+                        </p>
+
+                        <div class="business-card-footer">
+                            <span>
+                                <i class="fa-solid fa-heart"></i>
+                                Taste local flavours
+                            </span>
+                        </div>
+
+                        <div class="business-card-action">
+                            <button type="button"
+                                class="business-explore-button"
+                                data-filter="food">
+                                Explore Category
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </button>
+                        </div>
+
+                    </div>
+                </article>
+
+
+                <!-- SHOPPING -->
+                <article class="business-card"
+                    data-category="shopping"
+                    data-name="Shopping and Markets"
+                    data-keywords="markets shopping textiles clothing jewellery souvenirs gemstones local shops">
+
+                    <div class="business-card-image shopping-image">
+                        <i class="fa-solid fa-bag-shopping"></i>
+                        <span class="business-image-label">SHOP LOCAL</span>
+                    </div>
+
+                    <div class="business-card-content">
+
+                        <span class="business-type">SHOPPING</span>
+
+                        <h3>Shopping & Markets</h3>
+
+                        <p>
+                            Find local shopping experiences,
+                            textiles, jewellery, souvenirs and more.
+                        </p>
+
+                        <div class="business-card-footer">
+                            <span>
+                                <i class="fa-solid fa-heart"></i>
+                                Discover local markets
+                            </span>
+                        </div>
+
+                        <div class="business-card-action">
+                            <button type="button"
+                                class="business-explore-button"
+                                data-filter="shopping">
+                                Explore Category
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </button>
+                        </div>
+
+                    </div>
+                </article>
+
+
+                <!-- STAYS -->
+                <article class="business-card"
+                    data-category="stays"
+                    data-name="Hotels and Homestays"
+                    data-keywords="hotels homestays guest houses accommodation heritage stays">
+
+                    <div class="business-card-image stays-image">
+                        <i class="fa-solid fa-hotel"></i>
+                        <span class="business-image-label">STAY LOCAL</span>
+                    </div>
+
+                    <div class="business-card-content">
+
+                        <span class="business-type">STAYS</span>
+
+                        <h3>Hotels & Homestays</h3>
+
+                        <p>
+                            Explore accommodation options,
+                            guest houses and locally operated stays.
+                        </p>
+
+                        <div class="business-card-footer">
+                            <span>
+                                <i class="fa-solid fa-heart"></i>
+                                Find your stay
+                            </span>
+                        </div>
+
+                        <div class="business-card-action">
+                            <button type="button"
+                                class="business-explore-button"
+                                data-filter="stays">
+                                Explore Category
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </button>
+                        </div>
+
+                    </div>
+                </article>
+
+
+                <!-- EXPERIENCES -->
+                <article class="business-card"
+                    data-category="experiences"
+                    data-name="Local Experiences"
+                    data-keywords="guided tours cultural experiences photography workshops heritage activities">
+
+                    <div class="business-card-image experiences-image">
+                        <i class="fa-solid fa-camera"></i>
+                        <span class="business-image-label">EXPERIENCE JAIPUR</span>
+                    </div>
+
+                    <div class="business-card-content">
+
+                        <span class="business-type">EXPERIENCES</span>
+
+                        <h3>Local Experiences</h3>
+
+                        <p>
+                            Discover cultural activities, guided tours,
+                            workshops and unique local experiences.
+                        </p>
+
+                        <div class="business-card-footer">
+                            <span>
+                                <i class="fa-solid fa-heart"></i>
+                                Experience the city
+                            </span>
+                        </div>
+
+                        <div class="business-card-action">
+                            <button type="button"
+                                class="business-explore-button"
+                                data-filter="experiences">
+                                Explore Category
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </button>
+                        </div>
+
+                    </div>
+                </article>
+
+
+                <!-- TRANSPORT -->
+                <article class="business-card"
+                    data-category="transport"
+                    data-name="Transport and Tours"
+                    data-keywords="local transport taxi car rental tour operators travel services">
+
+                    <div class="business-card-image transport-image">
+                        <i class="fa-solid fa-car"></i>
+                        <span class="business-image-label">GET AROUND</span>
+                    </div>
+
+                    <div class="business-card-content">
+
+                        <span class="business-type">TRANSPORT</span>
+
+                        <h3>Transport & Tours</h3>
+
+                        <p>
+                            Find local transport providers,
+                            travel services and tour operators.
+                        </p>
+
+                        <div class="business-card-footer">
+                            <span>
+                                <i class="fa-solid fa-heart"></i>
+                                Explore with ease
+                            </span>
+                        </div>
+
+                        <div class="business-card-action">
+                            <button type="button"
+                                class="business-explore-button"
+                                data-filter="transport">
+                                Explore Category
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </button>
+                        </div>
+
+                    </div>
+                </article>
+
+            </div>
+
+
+            <!-- NO RESULTS -->
+            <div class="business-no-results" id="businessNoResults" hidden>
+
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+                <h3>No categories found</h3>
+
+                <p>
+                    Try another search term or choose a different category.
+                </p>
+
+                <button type="button" id="resetBusinessFilters">
+                    Reset Filters
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- SUPPORT LOCAL SECTION -->
+        <section class="support-local-section">
+
+            <div class="support-local-icon">
+                <i class="fa-solid fa-handshake-angle"></i>
+            </div>
+
+            <div class="support-local-content">
+
+                <span>MAKE A DIFFERENCE</span>
+
+                <h2>Explore Local. Support Local.</h2>
+
+                <p>
+                    Every local purchase helps support Jaipur's
+                    artisans, entrepreneurs, families and communities.
+                    Discover the people behind the city's culture.
+                </p>
+
+            </div>
+
+            <a href="explore.html" class="support-local-button">
+                Explore Jaipur
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer class="business-footer">
+
+        <div class="business-footer-content">
+
+            <a href="../index.html" class="logo footer-logo">
+                <span class="logo-icon">
+                    <i class="fa-solid fa-landmark"></i>
+                </span>
+
+                <span>
+                    JAIPUR
+                    <small>TOUR CLOUD</small>
+                </span>
+            </a>
+
+            <p>
+                Discover Jaipur's heritage, people, businesses
+                and experiences.
+            </p>
+
+            <p class="business-copyright">
+                &copy; <span id="currentYear"></span>
+                Jaipur Tour Cloud. All rights reserved.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <script src="../js/businesses.js"></script>
+
+</body>
+</html>

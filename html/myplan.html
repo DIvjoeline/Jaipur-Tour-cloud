@@ -1,0 +1,724 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Travel Plan | Jaipur Tour Cloud</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="../css/home.css">
+    <link rel="stylesheet" href="../css/myplan.css">
+
+</head>
+
+<body>
+
+    <!-- =====================================
+         NAVIGATION
+    ====================================== -->
+
+    <header class="header" id="header">
+
+        <a href="../index.html" class="logo">
+
+            <span class="logo-icon">
+                <i class="fa-solid fa-landmark"></i>
+            </span>
+
+            <span>
+                JAIPUR
+                <small>TOUR CLOUD</small>
+            </span>
+
+        </a>
+
+ 
+<nav class="navbar" id="navbar">
+
+    <a href="../index.html" class="nav-link">Home</a>
+
+    <a href="explore.html" class="nav-link">Explore</a>
+
+    <a href="myplan.html" class="nav-link">My Plan</a>
+
+    <a href="price-check.html" class="nav-link">Fair Prices</a>
+
+    <a href="essentials.html" class="nav-link">Essentials</a>
+
+    <a href="businesses.html" class="nav-link">Local Businesses</a>
+
+    <a href="../index.html" class="mobile-login">
+        Report an Issue
+    </a>
+
+</nav>
+
+
+
+        <div class="nav-actions">
+
+            <a href="../index.html#report" class="login-link">
+                Report Issue
+            </a>
+
+            <a href="login.html" class="nav-button">
+                Sign In
+            </a>
+
+            <button
+                class="menu-toggle"
+                id="menuToggle"
+                aria-label="Open navigation menu"
+                aria-expanded="false">
+
+                <i class="fa-solid fa-bars"></i>
+
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- =====================================
+         HERO SECTION
+    ====================================== -->
+
+    <section class="plan-hero">
+
+        <div class="plan-hero-overlay"></div>
+
+        <div class="plan-hero-content">
+
+            <span class="plan-eyebrow">
+                <i class="fa-solid fa-map-location-dot"></i>
+                YOUR JOURNEY STARTS HERE
+            </span>
+
+            <h1>
+                Create Your
+                <span>Jaipur Journey</span>
+            </h1>
+
+            <p>
+                Your Jaipur adventure, your way.
+                Choose the places you love, organize your days
+                and create a memorable travel experience.
+            </p>
+
+            <div class="plan-breadcrumb">
+
+                <a href="../index.html">Home</a>
+
+                <i class="fa-solid fa-chevron-right"></i>
+
+                <span>My Plan</span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================
+         MAIN PLANNER
+    ====================================== -->
+
+    <main class="plan-main">
+
+        <section class="planner-section">
+
+            <!-- SECTION HEADING -->
+
+            <div class="plan-heading">
+
+                <span class="section-tag">
+                    PERSONAL TRAVEL PLANNER
+                </span>
+
+                <h2>
+                    Plan Your <span>Perfect Trip</span>
+                </h2>
+
+                <p>
+                    Start with your travel details and build
+                    an itinerary around your favourite places.
+                </p>
+
+            </div>
+
+
+            <!-- =================================
+                 TRIP DETAILS
+            ================================== -->
+
+            <div class="trip-details-card">
+
+                <div class="planner-card-heading">
+
+                    <div class="planner-icon">
+                        <i class="fa-regular fa-calendar-days"></i>
+                    </div>
+
+                    <div>
+                        <h3>Trip Details</h3>
+
+                        <p>
+                            Tell us when you are visiting Jaipur.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="trip-form" id="tripForm">
+
+                    <div class="form-group">
+
+                        <label for="tripName">
+                            Trip Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="tripName"
+                            placeholder="e.g. My Jaipur Adventure"
+                            maxlength="60">
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="tripStartDate">
+                            Starting Date
+                        </label>
+
+                        <input
+                            type="date"
+                            id="tripStartDate">
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="tripDuration">
+                            Number of Days
+                        </label>
+
+                        <select id="tripDuration">
+
+                            <option value="1">1 Day</option>
+                            <option value="2" selected>2 Days</option>
+                            <option value="3">3 Days</option>
+                            <option value="4">4 Days</option>
+                            <option value="5">5 Days</option>
+                            <option value="6">6 Days</option>
+                            <option value="7">7 Days</option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="travelType">
+                            Travel Style
+                        </label>
+
+                        <select id="travelType">
+
+                            <option value="balanced">
+                                Balanced Trip
+                            </option>
+
+                            <option value="history">
+                                History & Culture
+                            </option>
+
+                            <option value="relaxed">
+                                Relaxed Exploration
+                            </option>
+
+                            <option value="budget">
+                                Budget Friendly
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================
+                 ATTRACTION SELECTION
+            ================================== -->
+
+            <div class="attraction-selection">
+
+                <div class="selection-heading">
+
+                    <div>
+                        <span class="section-tag">
+                            DISCOVER YOUR FAVOURITES
+                        </span>
+
+                        <h2>
+                            Choose Your <span>Places</span>
+                        </h2>
+
+                        <p>
+                            Add attractions to your travel itinerary.
+                        </p>
+                    </div>
+
+                    <a href="explore.html" class="browse-link">
+                        Explore All Places
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+
+                </div>
+
+
+                <!-- SEARCH -->
+
+                <div class="plan-search">
+
+                    <i class="fa-solid fa-magnifying-glass"></i>
+
+                    <input
+                        type="text"
+                        id="placeSearch"
+                        placeholder="Search attractions...">
+
+                </div>
+
+
+                <!-- AVAILABLE ATTRACTIONS -->
+
+                <div
+                    class="available-attractions"
+                    id="availableAttractions">
+
+
+                    <!-- HAWA MAHAL -->
+
+                    <article
+                        class="plan-place-card"
+                        data-name="hawa mahal"
+                        data-category="palace">
+
+                        <div class="plan-place-image">
+
+                            <img
+                                src="https://commons.wikimedia.org/wiki/Special:FilePath/Hawa_Mahal_2026.jpg?width=700"
+                                alt="Hawa Mahal Jaipur"
+                                loading="lazy">
+
+                        </div>
+
+                        <div class="plan-place-content">
+
+                            <span class="place-category">
+                                PALACE
+                            </span>
+
+                            <h3>Hawa Mahal</h3>
+
+                            <p>
+                                Discover Jaipur's iconic Palace of Winds.
+                            </p>
+
+                            <button
+                                class="add-place-btn"
+                                data-place="hawa mahal">
+
+                                <i class="fa-solid fa-plus"></i>
+                                Add to Plan
+
+                            </button>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- AMBER FORT -->
+
+                    <article
+                        class="plan-place-card"
+                        data-name="amber fort"
+                        data-category="fort">
+
+                        <div class="plan-place-image">
+
+                            
+                        <img
+                            src="https://commons.wikimedia.org/wiki/Special:FilePath/Amber_fort%2C_Jaipur%2C_Rajasthan.jpg?width=700"
+                            alt="Amber Fort, Jaipur, Rajasthan"
+                            loading="lazy"
+                            onerror="this.onerror=null; this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Amber_Fort.jpg?width=700';">
+
+                        </div>
+
+                        <div class="plan-place-content">
+
+                            <span class="place-category">
+                                FORT
+                            </span>
+
+                            <h3>Amber Fort</h3>
+
+                            <p>
+                                Explore the grandeur of Rajasthan's royal heritage.
+                            </p>
+
+                            <button
+                                class="add-place-btn"
+                                data-place="amber fort">
+
+                                <i class="fa-solid fa-plus"></i>
+                                Add to Plan
+
+                            </button>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- JAL MAHAL -->
+
+                    <article
+                        class="plan-place-card"
+                        data-name="jal mahal"
+                        data-category="lake">
+
+                        <div class="plan-place-image">
+
+                            <img
+                                src="https://upload.wikimedia.org/wikipedia/commons/6/6d/Jal_Mahal_in_Man_Sagar_Lake.jpg"
+                                alt="Jal Mahal Jaipur"
+                                loading="lazy">
+
+                        </div>
+
+                        <div class="plan-place-content">
+
+                            <span class="place-category">
+                                LAKE
+                            </span>
+
+                            <h3>Jal Mahal</h3>
+
+                            <p>
+                                Enjoy the beautiful palace surrounded by water.
+                            </p>
+
+                            <button
+                                class="add-place-btn"
+                                data-place="jal mahal">
+
+                                <i class="fa-solid fa-plus"></i>
+                                Add to Plan
+
+                            </button>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- CITY PALACE -->
+
+                    <article
+                        class="plan-place-card"
+                        data-name="city palace"
+                        data-category="palace">
+
+                        <div class="plan-place-image">
+
+                            <img
+                                src="https://commons.wikimedia.org/wiki/Special:FilePath/Jaipur%27s_City_Palace.jpg?width=700"
+                                alt="City Palace Jaipur"
+                                loading="lazy">
+
+                        </div>
+
+                        <div class="plan-place-content">
+
+                            <span class="place-category">
+                                PALACE
+                            </span>
+
+                            <h3>City Palace</h3>
+
+                            <p>
+                                Experience Jaipur's royal architecture and history.
+                            </p>
+
+                            <button
+                                class="add-place-btn"
+                                data-place="city palace">
+
+                                <i class="fa-solid fa-plus"></i>
+                                Add to Plan
+
+                            </button>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+
+                <!-- NO SEARCH RESULTS -->
+
+                <div class="plan-empty-search" id="planEmptySearch">
+
+                    <i class="fa-solid fa-map-location-dot"></i>
+
+                    <h3>No places found</h3>
+
+                    <p>
+                        Try searching with another attraction name.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================
+                 MY SELECTED PLACES
+            ================================== -->
+
+            <div class="selected-section">
+
+                <div class="selected-heading">
+
+                    <div>
+
+                        <span class="section-tag">
+                            YOUR PERSONAL COLLECTION
+                        </span>
+
+                        <h2>
+                            Selected <span>Places</span>
+                        </h2>
+
+                        <p>
+                            Your chosen attractions will appear here.
+                        </p>
+
+                    </div>
+
+                    <div class="selected-counter">
+
+                        <i class="fa-solid fa-location-dot"></i>
+
+                        <span id="totalPlaces">0</span>
+
+                        <span>Places</span>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    class="selected-places"
+                    id="selectedPlaces">
+
+                    <div class="plan-empty-state">
+
+                        <div class="empty-icon">
+                            <i class="fa-regular fa-map"></i>
+                        </div>
+
+                        <h3>Your journey starts here</h3>
+
+                        <p>
+                            You haven't selected any attractions yet.
+                            Add places from above to start planning.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================
+                 ITINERARY
+            ================================== -->
+
+            <div class="itinerary-section">
+
+                <div class="itinerary-heading">
+
+                    <div>
+
+                        <span class="section-tag">
+                            ORGANIZE YOUR ADVENTURE
+                        </span>
+
+                        <h2>
+                            Your <span>Day-wise Itinerary</span>
+                        </h2>
+
+                        <p>
+                            Arrange your selected attractions
+                            across your travel days.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="itinerary-actions">
+
+                    <button
+                        type="button"
+                        class="generate-plan-btn"
+                        id="generatePlan">
+
+                        <i class="fa-solid fa-wand-magic-sparkles"></i>
+
+                        Generate My Plan
+
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="clear-plan-btn"
+                        id="clearPlan">
+
+                        <i class="fa-regular fa-trash-can"></i>
+
+                        Clear Plan
+
+                    </button>
+
+                </div>
+
+
+                <p
+                    class="plan-message"
+                    id="planMessage"
+                    role="status"
+                    aria-live="polite">
+                </p>
+
+
+                <div
+                    class="itinerary-days"
+                    id="itineraryDays">
+
+                    <div class="itinerary-empty-state">
+
+                        <i class="fa-solid fa-route"></i>
+
+                        <h3>Your itinerary is waiting</h3>
+
+                        <p>
+                            Select attractions and generate
+                            your day-wise Jaipur travel plan.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================
+                 SAVE PLAN
+            ================================== -->
+
+            <div class="save-plan-section">
+
+                <div class="save-plan-content">
+
+                    <div class="save-plan-icon">
+                        <i class="fa-solid fa-cloud-arrow-down"></i>
+                    </div>
+
+                    <div>
+
+                        <h3>Keep Your Jaipur Journey Safe</h3>
+
+                        <p>
+                            Save your travel plan in this browser
+                            so you can return to it later.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    class="save-plan-btn"
+                    id="savePlan">
+
+                    <i class="fa-solid fa-floppy-disk"></i>
+
+                    Save My Plan
+
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =====================================
+         FOOTER
+    ====================================== -->
+
+    <footer class="explore-footer">
+            <p class="copyright">
+                © <span id="currentYear"></span>
+                Jaipur Tour Cloud. All rights reserved.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script src="../js/itinerary.js"></script>
+
+</body>
+
+</html>
